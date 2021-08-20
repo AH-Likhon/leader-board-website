@@ -45,3 +45,19 @@ document.getElementById('add-item').addEventListener('click', function () {
 document.getElementById('item-container').addEventListener('click', function (event) {
     event.target.parentNode.removeChild(event.target);
 })
+
+
+// add number and disabled btn
+function addNumber(isIncreasing) {
+    const inputBtn = document.getElementById('input-btn');
+    let inputBtnValue = inputBtn.value;
+    inputBtnValue = parseInt(inputBtnValue) + 1;
+    if (inputBtnValue == 5) {
+        document.getElementById('add-number').setAttribute('disabled', true);
+    }
+    inputBtn.value = inputBtnValue;
+}
+
+document.getElementById('add-number').addEventListener('click', function () {
+    addNumber(true);
+})
